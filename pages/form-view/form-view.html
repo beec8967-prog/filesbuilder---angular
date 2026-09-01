@@ -1,0 +1,96 @@
+<div class="page">
+
+  <div *ngIf="loading" class="message">
+    טוען טופס...
+  </div>
+
+  <div *ngIf="error" class="message error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="form && !loading" class="form-container">
+
+    <header>
+      <h1>{{ form.name }}</h1>
+
+      <p>
+        מילוי טופס
+      </p>
+    </header>
+
+    <form>
+
+      <div
+        class="field"
+        *ngFor="let field of form.fields">
+
+        <label>
+          {{ field.label }}
+        </label>
+
+        <!-- Text / Email / Number / Date -->
+
+        <input
+          *ngIf="
+            field.fieldType === 'text' ||
+            field.fieldType === 'email' ||
+            field.fieldType === 'number' ||
+            field.fieldType === 'date'
+          "
+          [type]="field.fieldType"
+          [name]="'field_' + field.id"
+        />
+
+        <!-- Textarea -->
+
+        <textarea
+          *ngIf="field.fieldType === 'textarea'"
+          [name]="'field_' + field.id">
+        </textarea>
+
+        <!-- Select -->
+
+        <select
+          *ngIf="field.fieldType === 'select'"
+          [name]="'field_' + field.id">
+
+          <option value="">
+            בחר אפשרות
+          </option>
+
+          <option
+            *ngFor="let option of field.options"
+            [value]="option.value">
+
+            {{ option.label }}
+
+          </option>
+
+        </select>
+
+        <!-- Checkbox -->
+
+        <div
+          *ngIf="field.fieldType === 'checkbox'"
+          class="checkbox">
+
+          <input
+            type="checkbox"
+            [name]="'field_' + field.id"
+          />
+
+          <span>{{ field.label }}</span>
+
+        </div>
+
+      </div>
+
+      <button type="submit">
+        שלח טופס
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

@@ -1,0 +1,88 @@
+.dashboard {
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding: 40px;
+  direction: rtl;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+.header p {
+  margin: 0;
+  color: #666;
+}
+
+.new-button {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.forms-grid {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.form-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h2 {
+  margin-top: 0;
+}
+
+.form-card p {
+  color: #555;
+}
+
+.form-card small {
+  color: #888;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 9px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.message {
+  max-width: 1200px;
+  margin: 40px auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+.error {
+  color: #b00020;
+}

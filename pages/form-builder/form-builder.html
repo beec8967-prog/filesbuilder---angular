@@ -1,0 +1,177 @@
+<div class="builder">
+
+  <header class="builder-header">
+
+    <div>
+      <h1>יצירת טופס</h1>
+      <p>בנה את הטופס שלך</p>
+    </div>
+
+    <button
+      class="save-button"
+      (click)="saveForm()">
+      שמור טופס
+    </button>
+
+  </header>
+
+
+  <section class="form-settings">
+
+    <label>
+      שם הטופס
+    </label>
+
+    <input
+      type="text"
+      [(ngModel)]="formName"
+      placeholder="לדוגמה: בקשת חופשה">
+
+  </section>
+
+
+  <section class="add-field">
+
+    <h2>הוספת שדה</h2>
+
+    <div class="field-controls">
+
+      <input
+        type="text"
+        [(ngModel)]="selectedFieldLabel"
+        placeholder="שם השדה">
+
+      <select [(ngModel)]="selectedFieldType">
+
+        <option value="text">
+          טקסט
+        </option>
+
+        <option value="date">
+          תאריך
+        </option>
+
+        <option value="number">
+          מספר
+        </option>
+
+        <option value="email">
+          אימייל
+        </option>
+
+        <option value="textarea">
+          טקסט ארוך
+        </option>
+
+        <option value="select">
+          בחירה
+        </option>
+
+        <option value="checkbox">
+          סימון
+        </option>
+
+      </select>
+
+      <button
+        class="add-button"
+        (click)="addField()">
+
+        + הוסף שדה
+
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <section class="fields">
+
+    <h2>
+      שדות הטופס
+    </h2>
+
+    <div
+      class="empty"
+      *ngIf="fields.length === 0">
+
+      עדיין לא נוספו שדות
+
+    </div>
+
+
+    <div
+      class="field-card"
+      *ngFor="let field of fields; let i = index">
+
+      <div class="field-number">
+        {{ field.order }}
+      </div>
+
+      <div class="field-info">
+
+        <strong>
+          {{ field.label }}
+        </strong>
+
+        <span>
+          {{ field.fieldType }}
+        </span>
+
+      </div>
+
+      <div class="field-actions">
+
+        <button
+          (click)="moveUp(i)"
+          [disabled]="i === 0">
+
+          ↑
+
+        </button>
+
+        <button
+          (click)="moveDown(i)"
+          [disabled]="i === fields.length - 1">
+
+          ↓
+
+        </button>
+
+        <button
+          class="delete"
+          (click)="removeField(i)">
+
+          מחק
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="approvals">
+
+    <h2>שלבי אישור</h2>
+
+    <div
+      class="approval-card"
+      *ngFor="let step of approvalSteps">
+
+      <strong>
+        {{ step.stepOrder }}. {{ step.name }}
+      </strong>
+
+      <span>
+        {{ step.approver }}
+      </span>
+
+    </div>
+
+  </section>
+
+</div>

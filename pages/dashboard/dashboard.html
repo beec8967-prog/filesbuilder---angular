@@ -1,0 +1,68 @@
+<div class="dashboard">
+
+  <header class="header">
+    <div>
+      <h1>Form Builder</h1>
+      <p>ניהול הטפסים שלך</p>
+    </div>
+
+    <button class="new-button">
+      + טופס חדש
+    </button>
+  </header>
+
+  <main>
+
+    @if (loading) {
+      <div class="message">
+        טוען טפסים...
+      </div>
+    }
+
+    @if (error) {
+      <div class="message error">
+        {{ error }}
+      </div>
+    }
+
+    @if (!loading && !error) {
+
+      @if (forms.length === 0) {
+        <div class="message">
+          עדיין אין טפסים.
+        </div>
+      }
+
+      @if (forms.length > 0) {
+        <div class="forms-grid">
+
+          @for (form of forms; track form.id) {
+            <div class="form-card">
+
+              <h2>{{ form.name }}</h2>
+
+              <p>
+                {{ form.fields.length }} שדות
+              </p>
+
+              <small>
+                נוצר על ידי {{ form.createdBy }}
+              </small>
+
+              <div class="actions">
+                <button>פתח</button>
+                <button>ערוך</button>
+                <button>מחק</button>
+              </div>
+
+            </div>
+          }
+
+        </div>
+      }
+
+    }
+
+  </main>
+
+</div>

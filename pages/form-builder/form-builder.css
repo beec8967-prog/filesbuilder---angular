@@ -1,0 +1,150 @@
+.builder {
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding: 40px;
+  direction: rtl;
+  font-family: Arial, sans-serif;
+}
+
+.builder-header {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.builder-header h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+.builder-header p {
+  margin: 0;
+  color: #777;
+}
+
+.save-button,
+.add-button {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.form-settings,
+.add-field,
+.fields,
+.approvals {
+  max-width: 1000px;
+  margin: 0 auto 25px;
+
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.form-settings label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-settings input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  font-size: 16px;
+}
+
+.field-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.field-controls input,
+.field-controls select {
+  flex: 1;
+  padding: 11px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+}
+
+.field-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+
+  margin-bottom: 10px;
+}
+
+.field-number {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #eee;
+}
+
+.field-info {
+  flex: 1;
+}
+
+.field-info strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.field-info span {
+  color: #888;
+  font-size: 13px;
+}
+
+.field-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.field-actions button {
+  padding: 7px 10px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.field-actions .delete {
+  color: #b00020;
+}
+
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+}
+
+.approval-card {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 15px;
+
+  border: 1px solid #eee;
+  border-radius: 8px;
+
+  margin-bottom: 10px;
+}
